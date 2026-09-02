@@ -1,0 +1,79 @@
+.b-faq {
+    input.tab-check {
+        position: absolute !important;
+        opacity: 0 !important;
+        z-index: -1 !important;
+    }
+
+    .tabs {
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 16px !important;
+    }
+
+    .tabs-label {
+        padding: 16px;
+        margin-bottom: 0 !important;
+        cursor: pointer;
+        color: var(--body);
+
+        .__icon {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            line-height: 1;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .__plus,
+        .__minus {
+            position: absolute;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .__plus {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .__minus {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.7);
+        }
+    }
+
+    .tabs-content {
+        max-height: 0;
+        transition: all 0.3s;
+        padding: 0 24px;
+        overflow: hidden;
+
+        p {
+            margin: 0 0 16px;
+            color: var(--body);
+            font-size: 14px;
+            display: inline-block;
+        }
+    }
+
+    input:checked + .tabs-label {
+        .__plus {
+            opacity: 0;
+            transform: rotate(90deg) scale(0.7);
+        }
+
+        .__minus {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+    }
+
+    input:checked ~ .tabs-content {
+        max-height: 1200px;
+        padding: 0 24px 24px;
+    }
+}

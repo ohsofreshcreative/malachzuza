@@ -1,0 +1,162 @@
+{
+  "_pagination-C88VV8fh.js": {
+    "file": "assets/pagination-C88VV8fh.js",
+    "name": "pagination",
+    "imports": [
+      "_swiper-ebX-QyT2.js"
+    ],
+    "css": [
+      "assets/pagination-D8gyGEei.css"
+    ]
+  },
+  "_pagination-D8gyGEei.css": {
+    "file": "assets/pagination-D8gyGEei.css",
+    "src": "_pagination-D8gyGEei.css"
+  },
+  "_swiper-HzbfsHSZ.css": {
+    "file": "assets/swiper-HzbfsHSZ.css",
+    "src": "_swiper-HzbfsHSZ.css"
+  },
+  "_swiper-ebX-QyT2.js": {
+    "file": "assets/swiper-ebX-QyT2.js",
+    "name": "swiper",
+    "css": [
+      "assets/swiper-HzbfsHSZ.css"
+    ]
+  },
+  "editor.deps.json": {
+    "file": "assets/editor.deps-BqrDAOEV.json",
+    "src": "editor.deps.json"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-RkbqKKcY.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "assets": [
+      "assets/btn-arrow-DTPiQfMM.svg",
+      "assets/bottom-arrow-BIW1L8lC.svg",
+      "assets/check-B9vqYQsp.svg",
+      "assets/pointer-5_58814e.svg",
+      "assets/hero-stripes-bg-C5teitVT.jpg",
+      "assets/phone-B5evyx38.svg",
+      "assets/mail-BoVXRJiK.svg"
+    ]
+  },
+  "resources/css/editor.css": {
+    "file": "assets/editor-Lghzp-lU.css",
+    "name": "editor",
+    "names": [
+      "editor.css"
+    ],
+    "src": "resources/css/editor.css",
+    "isEntry": true,
+    "assets": [
+      "assets/btn-arrow-DTPiQfMM.svg",
+      "assets/bottom-arrow-BIW1L8lC.svg",
+      "assets/check-B9vqYQsp.svg",
+      "assets/pointer-5_58814e.svg",
+      "assets/hero-stripes-bg-C5teitVT.jpg",
+      "assets/phone-B5evyx38.svg",
+      "assets/mail-BoVXRJiK.svg"
+    ]
+  },
+  "resources/images/bottom-arrow.svg": {
+    "file": "assets/bottom-arrow-BIW1L8lC.svg",
+    "src": "resources/images/bottom-arrow.svg"
+  },
+  "resources/images/btn-arrow.svg": {
+    "file": "assets/btn-arrow-DTPiQfMM.svg",
+    "src": "resources/images/btn-arrow.svg"
+  },
+  "resources/images/check.svg": {
+    "file": "assets/check-B9vqYQsp.svg",
+    "src": "resources/images/check.svg"
+  },
+  "resources/images/hero-stripes-bg.jpg": {
+    "file": "assets/hero-stripes-bg-C5teitVT.jpg",
+    "src": "resources/images/hero-stripes-bg.jpg"
+  },
+  "resources/images/mail.svg": {
+    "file": "assets/mail-BoVXRJiK.svg",
+    "src": "resources/images/mail.svg"
+  },
+  "resources/images/phone.svg": {
+    "file": "assets/phone-B5evyx38.svg",
+    "src": "resources/images/phone.svg"
+  },
+  "resources/images/pointer.svg": {
+    "file": "assets/pointer-5_58814e.svg",
+    "src": "resources/images/pointer.svg"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-fi4sDMpr.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/blocks/reviews.js",
+      "resources/js/blocks/tabs.js",
+      "resources/js/blocks/slider.js",
+      "resources/js/blocks/steps.js",
+      "resources/js/blocks/catalogues.js",
+      "resources/js/ral-search.js"
+    ]
+  },
+  "resources/js/blocks/catalogues.js": {
+    "file": "assets/catalogues-BZO8FkbB.js",
+    "name": "catalogues",
+    "src": "resources/js/blocks/catalogues.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/blocks/reviews.js": {
+    "file": "assets/reviews-CZTnt921.js",
+    "name": "reviews",
+    "src": "resources/js/blocks/reviews.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-ebX-QyT2.js",
+      "_pagination-C88VV8fh.js"
+    ]
+  },
+  "resources/js/blocks/slider.js": {
+    "file": "assets/slider-DJ5nGZie.js",
+    "name": "slider",
+    "src": "resources/js/blocks/slider.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-ebX-QyT2.js",
+      "_pagination-C88VV8fh.js"
+    ]
+  },
+  "resources/js/blocks/steps.js": {
+    "file": "assets/steps-CET1CR6o.js",
+    "name": "steps",
+    "src": "resources/js/blocks/steps.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_swiper-ebX-QyT2.js"
+    ]
+  },
+  "resources/js/blocks/tabs.js": {
+    "file": "assets/tabs-DHLaxzBo.js",
+    "name": "tabs",
+    "src": "resources/js/blocks/tabs.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/editor.js": {
+    "file": "assets/editor-BvRk9kiK.js",
+    "name": "editor",
+    "src": "resources/js/editor.js",
+    "isEntry": true
+  },
+  "resources/js/ral-search.js": {
+    "file": "assets/ral-search-C2QkoCRZ.js",
+    "name": "ral-search",
+    "src": "resources/js/ral-search.js",
+    "isDynamicEntry": true
+  }
+}

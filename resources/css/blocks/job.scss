@@ -1,0 +1,25 @@
+.b-job {
+	.__txt {
+		ul {
+			margin-top: 8px;
+			margin-bottom: 24px;
+			list-style: disc;
+			padding-left: 1.25rem;
+
+			li {
+				display: list-item;
+				position: static;
+				margin-bottom: 0.5em;
+
+				&::marker {
+					color: var(--color-secondary);
+				}
+
+				&::before {
+					content: none;
+					display: none;
+				}
+			}
+		}
+	}
+}

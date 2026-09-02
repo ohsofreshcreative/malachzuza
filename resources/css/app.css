@@ -1,0 +1,256 @@
+@import 'tailwindcss' theme(static);
+
+/* bardzo ważne dla Sage/Blade: skanowanie klas */
+@source "../views/**/*.blade.php";
+@source "../../app/**/*.php";
+@source "../js/**/*.{js,ts,jsx,tsx}";
+
+/* Twoje “źródłowe” zmienne RGB */
+:root {
+	/* base */
+	/* PRIMARY */
+	--primary: 232 119 34;
+	/* #E87722 */
+	--p-hover: 46 24 7;
+	/* #2E1807 */
+
+	--p-50: 255 222 197;
+	/* #FFDEC5 */
+	--p-100: 250 206 173;
+	/* #FACEAD */
+	--p-200: 253 180 126;
+	/* #FDB47E */
+	--p-300: 249 164 99;
+	/* #F9A463 */
+	--p-400: 242 142 66;
+	/* #F28E42 */
+	--p-500: 232 119 34;
+	/* #E87722 */
+	--p-600: 193 99 28;
+	/* #C1631C */
+	--p-700: 155 79 23;
+	/* #9B4F17 */
+	--p-800: 116 60 17;
+	/* #743C11 */
+	--p-900: 77 40 11;
+	/* #4D280B */
+	--p-dark: 46 24 7;
+	/* #2E1807 */
+
+	--action: rgb(232, 119, 34);
+	/* SECONDARY */
+	--secondary: 76 76 76;
+	/* #4C4C4C */
+	--s-hover: 63 63 63;
+	/* #3F3F3F */
+
+	--s-50: 219 219 219;
+	/* #DBDBDB */
+	--s-100: 195 195 195;
+	/* #C3C3C3 */
+	--s-200: 166 166 166;
+	/* #A6A6A6 */
+	--s-300: 136 136 136;
+	/* #888888 */
+	--s-400: 106 106 106;
+	/* #6A6A6A */
+	--s-500: 76 76 76;
+	/* #4C4C4C */
+	--s-600: 63 63 63;
+	/* #3F3F3F */
+	--s-700: 51 51 51;
+	/* #333333 */
+	--s-800: 38 38 38;
+	/* #262626 */
+	--s-900: 25 25 25;
+	/* #191919 */
+	--s-dark: 15 15 15;
+	/* #0F0F0F */
+
+	/* THIRD */
+	--third: 70 152 202;
+	/* #4698CA */
+	--t-hover: 58 127 168;
+	/* #3A7FA8 */
+
+	--t-50: 209 232 247;
+	/* #D1E8F7 */
+	--t-100: 182 220 243;
+	/* #B6DCF3 */
+	--t-200: 153 204 235;
+	/* #99CCEB */
+	--t-300: 121 186 225;
+	/* #79BAE1 */
+	--t-400: 97 177 225;
+	/* #61B1E1 */
+	--t-500: 70 152 202;
+	/* #4698CA */
+	--t-600: 58 127 168;
+	/* #3A7FA8 */
+	--t-700: 47 101 135;
+	/* #2F6587 */
+	--t-800: 35 76 101;
+	/* #234C65 */
+	--t-900: 23 51 67;
+	/* #173343 */
+	--t-dark: 14 30 40;
+	/* #0E1E28 */
+
+	/* neutrals / fixed backgrounds */
+	--text-body: #4C4C4C;
+	--gray: #2a3f50;
+	--bg: #F7FDFF;
+	--bg-light: rgb(var(--s-100));
+	--bg-lighter: rgb(var(--s-50));
+	--bg-bright: #FFF6EF;
+	--bg-brand: #002704;
+	--bg-dark: #071622;
+	--bright: #FFF6EF;
+}
+
+@theme {
+	/* base */
+	--color-body: rgb(var(--body));
+	/* primary */
+	--color-primary: rgb(var(--primary));
+	--color-primary-hover: rgb(var(--p-hover));
+	--color-primary-50: rgb(var(--p-50));
+	--color-primary-100: rgb(var(--p-100));
+	--color-primary-200: rgb(var(--p-200));
+	--color-primary-300: rgb(var(--p-300));
+	--color-primary-400: rgb(var(--p-400));
+	--color-primary-500: rgb(var(--p-500));
+	--color-primary-600: rgb(var(--p-600));
+	--color-primary-700: rgb(var(--p-700));
+	--color-primary-800: rgb(var(--p-800));
+	--color-primary-900: rgb(var(--p-900));
+	--color-primary-dark: rgb(var(--p-dark));
+
+	--color-bright: var(--bright);
+	/* secondary */
+	--color-secondary: rgb(var(--secondary));
+	--color-secondary-hover: rgb(var(--s-hover));
+	--color-secondary-50: rgb(var(--s-50));
+	--color-secondary-100: rgb(var(--s-100));
+	--color-secondary-200: rgb(var(--s-200));
+	--color-secondary-300: rgb(var(--s-300));
+	--color-secondary-400: rgb(var(--s-400));
+	--color-secondary-500: rgb(var(--s-500));
+	--color-secondary-600: rgb(var(--s-600));
+	--color-secondary-700: rgb(var(--s-700));
+	--color-secondary-800: rgb(var(--s-800));
+	--color-secondary-900: rgb(var(--s-900));
+	--color-secondary-dark: rgb(var(--s-dark));
+	/* third */
+	--color-third: rgb(var(--third));
+	--color-third-hover: rgb(var(--t-hover));
+	--color-third-50: rgb(var(--t-50));
+	--color-third-100: rgb(var(--t-100));
+	--color-third-200: rgb(var(--t-200));
+	--color-third-300: rgb(var(--t-300));
+	--color-third-400: rgb(var(--t-400));
+	--color-third-500: rgb(var(--t-500));
+	--color-third-600: rgb(var(--t-600));
+	--color-third-700: rgb(var(--t-700));
+	--color-third-800: rgb(var(--t-800));
+	--color-third-900: rgb(var(--t-900));
+	--color-third-dark: rgb(var(--t-dark));
+
+	--color-gray: var(--gray);
+	--color-action: var(--action);
+
+	--color-background: var(--bg);
+
+	--color-page: var(--bg);
+	--color-background-light: var(--bg-light);
+	--color-background-brand: var(--bg-brand);
+	--color-background-dark: var(--bg-dark);
+
+	--color-primary-light: var(--color-primary-100);
+	--color-primary-lighter: var(--color-primary-50);
+	--color-primary-bright: var(--bright);
+
+	--color-secondary-light: var(--color-secondary-200);
+	--color-secondary-lighter: var(--color-secondary-100);
+
+	--color-muted: var(--color-secondary-500);
+	--gradient: linear-gradient(90deg, #2265CB 0%, #181D84 100%);
+	--gradient-light: linear-gradient(-90deg, #0E3A2D 0%, #0A533D 100%);
+	--gradient-s: linear-gradient(-90deg, #DE855D 0%, #D37A51 100%);
+
+}
+
+@utility m-header {
+	margin-top: var(--m-header);
+}
+
+@utility m-title {
+	padding-bottom: var(--m-title);
+}
+
+@utility m-btn {
+	margin-top: var(--m-btn);
+}
+
+@utility m-img {
+	margin-bottom: var(--m-img);
+}
+
+@import '../css/variables.scss';
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'baguettebox.js/dist/baguetteBox.min.css';
+@import '../css/woocommerce.scss';
+
+/*-- USED ---*/
+@import '../css/blocks/hero.scss';
+@import '../css/blocks/paths.scss';
+@import '../css/blocks/slider.scss';
+@import '../css/blocks/packages.scss';
+@import '../css/blocks/values.scss';
+@import '../css/blocks/steps.scss';
+@import '../css/blocks/experience.scss';
+@import '../css/blocks/banner.scss';
+@import '../css/blocks/switcher.scss';
+@import '../css/blocks/how.scss';
+@import '../css/blocks/support.scss';
+@import '../css/blocks/advantages.scss';
+@import '../css/blocks/jobs.scss';
+@import '../css/blocks/sectors.scss';
+@import '../css/blocks/challenges.scss';
+@import '../css/blocks/whyus.scss';
+@import '../css/blocks/example.scss';
+@import '../css/blocks/proces.scss';
+@import '../css/blocks/clients.scss';
+@import '../css/blocks/locations.scss';
+@import '../css/blocks/featured.scss';
+@import '../css/blocks/categories.scss';
+
+/*-- NOT USED ---*/
+@import '../css/blocks/about.scss';
+@import '../css/blocks/content.scss';
+@import '../css/blocks/cta.scss';
+@import '../css/blocks/logos.scss';
+@import '../css/blocks/reviews.scss';
+@import '../css/blocks/product.scss';
+@import '../css/blocks/table.scss';
+@import '../css/blocks/products.scss';
+@import '../css/blocks/offers.scss';
+@import '../css/blocks/wysiwyg.scss';
+@import '../css/blocks/history.scss';
+@import '../css/blocks/checks.scss';
+@import '../css/blocks/map.scss';
+@import '../css/blocks/catalogues.scss';
+@import '../css/blocks/action.scss';
+@import '../css/blocks/accordion.scss';
+@import '../css/blocks/cards.scss';
+@import '../css/blocks/category-posts.scss';
+@import '../css/blocks/contact.scss';
+@import '../css/blocks/faq.scss';
+@import '../css/blocks/image.scss';
+@import '../css/blocks/numbers.scss';
+@import '../css/blocks/overlap.scss';
+@import '../css/blocks/tabs.scss';
+@import '../css/blocks/job.scss';

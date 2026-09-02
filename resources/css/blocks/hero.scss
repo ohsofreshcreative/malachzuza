@@ -1,0 +1,140 @@
+.b-hero {
+	.__txt {
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: var(--color-primary);
+			font-size: 20px !important;
+			margin-top: 16px
+		}
+
+		p {
+			margin-bottom: 16px;
+		}
+
+		p:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		strong {
+			font-weight: 600;
+		}
+
+		ul {
+			margin-top: 8px;
+			margin-bottom: 24px;
+			list-style: none;
+			padding-left: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			li {
+				position: relative;
+				margin-bottom: 0.5em;
+				display: flex;
+				gap: 8px;
+				align-items: center;
+
+				&::before {
+					content: '';
+					display: inline-block;
+					width: 10px;
+					height: 10px;
+					background-image: url('@images/pointer.svg');
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					flex-shrink: 0;
+				}
+			}
+		}
+	}
+}
+
+
+.b-hero {
+	.__stripes-wrap {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+
+		max-width: 1376px;
+		margin: 0 auto;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.__stripes-spacer {
+		display: none;
+	}
+
+	.__stripes {
+		width: 100%;
+		height: 100%;
+
+		background-color: var(--color-primary);
+		background-image:
+			linear-gradient(rgb(var(--primary) / 0.95), rgb(var(--primary) / 0.95)),
+			url('@images/hero-stripes-bg.jpg');
+		background-size: cover;
+		background-position: center;
+
+		--stripes-mask: linear-gradient(to right,
+				transparent 0%, transparent 19%,
+				#000 19%, #000 29%,
+				transparent 29%, transparent 37%,
+				#000 37%, #000 63%,
+				transparent 63%, transparent 71%,
+				#000 71%, #000 81%,
+				transparent 81%, transparent 100%);
+
+		mask-image: var(--stripes-mask);
+		-webkit-mask-image: var(--stripes-mask);
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		mask-size: 100% 100%;
+		-webkit-mask-size: 100% 100%;
+	}
+
+	@media (min-width: 1024px) {
+		.__stripes-wrap {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 80px;
+			align-items: stretch;
+		}
+
+		.__stripes-spacer {
+			display: block;
+		}
+	}
+
+	.__glow {
+		position: absolute;
+		width: 100rem;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		opacity: 0.6;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.__glow--blue {
+		background: radial-gradient(circle,
+				var(--colors-bg-p-lighter, #E87722) 0%,
+				transparent 40%);
+	}
+
+	.__glow--pink {
+		background: radial-gradient(circle,
+				var(--colors-bg-s-lighter, #E87722) 0%,
+				transparent 30%);
+	}
+}

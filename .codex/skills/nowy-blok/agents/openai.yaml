@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nowy blok ACF"
+  short_description: "Tworzy blok ACF Sage na podstawie projektu"
+  default_prompt: "Użyj $nowy-blok, aby utworzyć blok ACF o nazwie Paths na podstawie załączonego projektu."

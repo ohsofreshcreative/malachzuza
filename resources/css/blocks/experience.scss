@@ -1,0 +1,77 @@
+.b-experience {
+	.__img {
+		min-height: 680px;
+	}
+
+	.__shape {
+		position: absolute;
+		left: -76px;
+		bottom: 52px;
+		width: 190px;
+		aspect-ratio: 1;
+		border: 28px solid var(--color-secondary-400);
+		border-image: linear-gradient(145deg, var(--color-secondary-300), var(--color-secondary-800)) 1;
+	}
+
+	.__txt p,
+	.__card-text p {
+		margin-bottom: 0;
+	}
+
+	.__cards {
+	}
+
+	.__card {
+		min-height: 196px;
+		padding: 32px 34px;
+		background: var(--color-white);
+	}
+
+	.__card:nth-child(2) {
+		color: var(--color-white);
+		background: var(--color-secondary-700);
+	}
+
+	.__card:nth-child(3) {
+		color: var(--color-white);
+		background: var(--color-secondary);
+	}
+
+	.__number {
+		margin-bottom: 16px;
+	}
+
+	.__card--cta {
+		color: var(--color-body);
+		background: var(--color-white);
+	}
+
+	.__cta-title {
+		font-size: clamp(18px, 1.5vw, 22px);
+		line-height: 1.35;
+	}
+
+	@media (max-width: 1023px) {
+		.__visual {
+			min-height: 560px;
+		}
+
+		.__shape {
+			left: -12px;
+			bottom: -36px;
+			width: 150px;
+			border-width: 22px;
+		}
+	}
+
+	@media (max-width: 639px) {
+		.__visual {
+			min-height: 420px;
+		}
+
+		.__card {
+			min-height: auto;
+			padding: 28px 24px;
+		}
+	}
+}

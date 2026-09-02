@@ -1,0 +1,18 @@
+.b-categories {
+}
+
+.b-categories.home-cats {
+	margin-top:-112px !important;
+}
+
+@media (max-width: 1024px) {
+	.b-categories.home-cats {
+		margin-top:-80px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.b-categories.home-cats {
+		margin-top:0px !important;
+	}
+}
