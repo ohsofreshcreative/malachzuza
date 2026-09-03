@@ -1,6 +1,6 @@
-<footer class="footer overflow-hidden relative z-10">
+<footer class="footer overflow-hidden relative z-10 -smt">
 
-	<img class="absolute opacity-10 right-0 bottom-0" src="{{ get_template_directory_uri() }}/resources/images/lines-footer.svg" alt="Lines Footer" />
+	<!-- <img class="absolute opacity-10 right-0 bottom-0" src="{{ get_template_directory_uri() }}/resources/images/lines-footer.svg" alt="Lines Footer" />
 
 	<div class="__wrapper relative z-10">
 
@@ -65,7 +65,7 @@
 			@endif
 			@endfor
 		</div>
-	</div>
+	</div> -->
 
 	<div class="footer-bottom">
 		<div class="c-main __bottom-wrapper">

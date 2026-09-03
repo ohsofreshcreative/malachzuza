@@ -58,69 +58,6 @@ add_action('template_redirect', function () {
 });
 
 
-/*--- DODATKOWE ZAKŁADKI PRODUKTU (ACF: product_tabs) ---*/
-add_filter('woocommerce_product_tabs', function ($tabs) {
-    global $product;
-
-    if (!$product instanceof \WC_Product) {
-        return $tabs;
-    }
-
-    // "Opis produktu" zawsze jako pierwsza zakładka (WooCommerce sam ją ukrywa, gdy opis jest pusty).
-    if (isset($tabs['description'])) {
-        $tabs['description']['title'] = 'Opis produktu';
-        $tabs['description']['priority'] = 5;
-    }
-
-    $rows = get_field('product_tabs', $product->get_id()) ?: [];
-    $priority = 12;
-
-    foreach ($rows as $index => $row) {
-        if (empty($row['tab_title'])) {
-            continue;
-        }
-
-        $tabs['product_tab_' . $index] = [
-            'title' => $row['tab_title'],
-            'priority' => $priority,
-            'callback' => function () use ($row) {
-                echo \Roots\view('partials.product-tab-' . $row['acf_fc_layout'], ['row' => $row])->render();
-            },
-        ];
-
-        $priority++;
-    }
-
-    // Dla produktów z przypisanymi kolorami RAL zakładka "Informacje dodatkowe" (domyślna z WooCommerce)
-    // i tak pokazywała tylko surową, przecinkową listę ~100-200 kodów RAL - zastępujemy ją siatką
-    // kolorowych kafelków w tym samym miejscu (ta sama pozycja co domyślna zakładka - priority 20).
-    $colorTaxonomy = wc_attribute_taxonomy_name(\App\Woo\RalAttributes::ATTR_COLOR);
-    $colorTerms = wc_get_product_terms($product->get_id(), $colorTaxonomy, ['fields' => 'all']);
-
-    if (! empty($colorTerms)) {
-        unset($tabs['additional_information']);
-
-        $colors = array_map(function ($term) {
-            $code = \App\Support\RalColors::codeFromTermName($term->name);
-
-            return [
-                'label' => $term->name,
-                'hex' => $code ? \App\Support\RalColors::hex($code) : '#CCCCCC',
-            ];
-        }, $colorTerms);
-
-        $tabs['ral_palette'] = [
-            'title' => 'Podgląd palety RAL',
-            'priority' => 20,
-            'callback' => function () use ($colors) {
-                echo \Roots\view('partials.product-tab-ral-palette', ['colors' => $colors])->render();
-            },
-        ];
-    }
-
-    return $tabs;
-});
-
 
 /*--- USUNIĘCIE ELEMENTÓW Z ARCHIWUM SKLEPU / KATEGORII ---*/
 add_action('wp', function () {
@@ -217,6 +154,17 @@ add_action('woocommerce_add_to_cart', function () {
         define('JUST_ADDED_TO_CART', true);
     }
 }, 10);
+
+
+/*--- PRZEKIEROWANIE PRODUKTU #38 BEZPOŚREDNIO DO KASY ---*/
+
+add_filter('woocommerce_add_to_cart_redirect', function ($url, $product) {
+    if (!$product instanceof \WC_Product || $product->get_id() !== 38) {
+        return $url;
+    }
+
+    return wc_get_checkout_url();
+}, 10, 2);
 
 
 add_action('wp_enqueue_scripts', function () {

@@ -227,6 +227,7 @@
 @import '../css/blocks/locations.scss';
 @import '../css/blocks/featured.scss';
 @import '../css/blocks/categories.scss';
+@import '../css/blocks/counter.scss';
 
 /*-- NOT USED ---*/
 @import '../css/blocks/about.scss';

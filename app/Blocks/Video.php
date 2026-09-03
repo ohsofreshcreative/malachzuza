@@ -34,9 +34,33 @@ class Video extends Block
 			->addGroup('g_video', ['label' => ''])
 
 			->addText('header', ['label' => 'Tytuł'])
+			->addSelect('source_type', [
+				'label' => 'Źródło wideo',
+				'choices' => [
+					'file' => 'Plik z biblioteki mediów',
+					'youtube' => 'Link YouTube',
+				],
+				'default_value' => 'file',
+				'ui' => 1,
+			])
 			->addFile('video', [
-				'label' => 'Wideo',
+				'label' => 'Plik wideo',
 				'return_format' => 'url',
+				'mime_types' => 'mp4,webm,ogv',
+				'conditional_logic' => [[[
+					'field' => 'source_type',
+					'operator' => '==',
+					'value' => 'file',
+				]]],
+			])
+			->addUrl('youtube_url', [
+				'label' => 'Link YouTube',
+				'instructions' => 'Wklej pełny adres filmu z youtube.com lub youtu.be.',
+				'conditional_logic' => [[[
+					'field' => 'source_type',
+					'operator' => '==',
+					'value' => 'youtube',
+				]]],
 			])
 
 			->endGroup()
@@ -75,8 +99,15 @@ class Video extends Block
 
 	public function with(): array
 	{
+		$gVideo = get_field('g_video') ?: [];
+		$sourceType = ($gVideo['source_type'] ?? 'file') === 'youtube' ? 'youtube' : 'file';
+
 		$fields = [
-			'g_video' => get_field('g_video'),
+			'g_video' => $gVideo,
+			'source_type' => $sourceType,
+			'youtube_embed_url' => $sourceType === 'youtube'
+				? $this->youtubeEmbedUrl($gVideo['youtube_url'] ?? null)
+				: null,
 
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),
@@ -93,5 +124,39 @@ class Video extends Block
 		]);
 
 		return $fields;
+	}
+
+	private function youtubeEmbedUrl(?string $url): ?string
+	{
+		if (empty($url)) {
+			return null;
+		}
+
+		$parts = wp_parse_url(trim($url));
+
+		if (!is_array($parts) || empty($parts['host'])) {
+			return null;
+		}
+
+		$host = strtolower(preg_replace('/^www\./', '', $parts['host']));
+		$path = $parts['path'] ?? '';
+		$videoId = null;
+
+		if ($host === 'youtu.be') {
+			$videoId = strtok(ltrim($path, '/'), '/');
+		} elseif (in_array($host, ['youtube.com', 'm.youtube.com', 'music.youtube.com', 'youtube-nocookie.com'], true)) {
+			if ($path === '/watch') {
+				parse_str($parts['query'] ?? '', $query);
+				$videoId = $query['v'] ?? null;
+			} elseif (preg_match('~^/(?:embed|shorts|live)/([^/?]+)~', $path, $matches)) {
+				$videoId = $matches[1];
+			}
+		}
+
+		if (!is_string($videoId) || !preg_match('/^[a-zA-Z0-9_-]{11}$/', $videoId)) {
+			return null;
+		}
+
+		return 'https://www.youtube-nocookie.com/embed/' . rawurlencode($videoId);
 	}
 }

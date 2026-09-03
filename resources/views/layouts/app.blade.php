@@ -30,6 +30,7 @@
 
 	<div id="app">
 
+
 		@include('sections.header')
 
 		@if (function_exists('is_woocommerce') && (is_shop() || is_product_category() || is_product_tag()))
@@ -38,13 +39,17 @@
 
 		@elseif (function_exists('is_woocommerce') && (is_product() || is_cart() || is_checkout() || is_account_page()))
 
-		<main id="main" class="c-main -menu-mt py-10">
+		<main id="main" class="c-main -menu-mt">
+			<a href="/" class="block mb-6">← Wróć do strony głównej</a>
 			@yield('content')
 		</main>
 
 		@else
 
 		<main id="main" class="main -menu-mt">
+			<div class="c-main">
+				<a href="/">← Wróć do strony głównej</a>
+			</div>
 			@yield('content')
 		</main>
 
@@ -53,10 +58,10 @@
 		@include('sections.footer')
 	</div>
 
-    {{-- Załączenie wysuwanego koszyka (Drawer) --}}
-    @if (function_exists('WC'))
-        @include('partials.cart-drawer')
-    @endif
+	{{-- Załączenie wysuwanego koszyka (Drawer) --}}
+	@if (function_exists('WC'))
+	@include('partials.cart-drawer')
+	@endif
 
 	@php(do_action('get_footer'))
 	@php(wp_footer())

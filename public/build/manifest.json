@@ -29,7 +29,7 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-RkbqKKcY.css",
+    "file": "assets/app-DErQclgP.css",
     "name": "app",
     "names": [
       "app.css"
@@ -47,7 +47,7 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-Lghzp-lU.css",
+    "file": "assets/editor-Cq6tlhxs.css",
     "name": "editor",
     "names": [
       "editor.css"
@@ -93,7 +93,7 @@
     "src": "resources/images/pointer.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-fi4sDMpr.js",
+    "file": "assets/app-B5HQV6CU.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -103,6 +103,7 @@
       "resources/js/blocks/slider.js",
       "resources/js/blocks/steps.js",
       "resources/js/blocks/catalogues.js",
+      "resources/js/blocks/counter.js",
       "resources/js/ral-search.js"
     ]
   },
@@ -110,6 +111,12 @@
     "file": "assets/catalogues-BZO8FkbB.js",
     "name": "catalogues",
     "src": "resources/js/blocks/catalogues.js",
+    "isDynamicEntry": true
+  },
+  "resources/js/blocks/counter.js": {
+    "file": "assets/counter-Dl4xfKUI.js",
+    "name": "counter",
+    "src": "resources/js/blocks/counter.js",
     "isDynamicEntry": true
   },
   "resources/js/blocks/reviews.js": {
