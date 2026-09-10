@@ -75,8 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     otherElements.forEach((element, index) => {
       gsap.from(element, {
         opacity: 0,
-        y: 50,
-        filter: 'blur(15px)',
+        scale: 0.9,
         duration: 1,
         ease: 'power2.out',
         delay: index * 0.1,
