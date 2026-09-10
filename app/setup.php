@@ -556,13 +556,17 @@ function get_pdf_thumbnail_url($pdf_attachment_id)
 
 add_filter('woocommerce_package_rates', function ($rates, $package) {
 
-    error_log('=== SHIPPING PACKAGE ===');
+    $logger = wc_get_logger();
 
-    error_log(print_r($package, true));
+    $logger->debug(
+        print_r($package, true),
+        ['source' => 'shipping-debug']
+    );
 
-    error_log('=== SHIPPING RATES ===');
-
-    error_log(print_r($rates, true));
+    $logger->debug(
+        print_r($rates, true),
+        ['source' => 'shipping-debug']
+    );
 
     return $rates;
 
