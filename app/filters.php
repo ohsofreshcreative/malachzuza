@@ -157,16 +157,16 @@ add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
 });
 
 
-/*--- WYKRYWANIE DODANIA DO KOSZYKA (DLA EMBEDDED REFRESH / POST) ---*/
+/*--- WYKRYWANIE DODANIA DO KOSZYKA (DLA EMBEDDED REFRESH / POST)
 
 add_action('woocommerce_add_to_cart', function () {
     if (!defined('JUST_ADDED_TO_CART')) {
         define('JUST_ADDED_TO_CART', true);
     }
-}, 10);
+}, 10); ---*/
 
 
-/*--- PRZEKIEROWANIE PRODUKTU #38 BEZPOŚREDNIO DO KASY ---*/
+/*--- PRZEKIEROWANIE PRODUKTU #38 BEZPOŚREDNIO DO KASY
 
 add_filter('woocommerce_add_to_cart_redirect', function ($url, $product) {
     if (!$product instanceof \WC_Product || $product->get_id() !== 38) {
@@ -181,4 +181,4 @@ add_action('wp_enqueue_scripts', function () {
     if (function_exists('is_woocommerce')) {
         wp_enqueue_script('wc-cart-fragments');
     }
-}, 99);
+}, 99); ---*/
