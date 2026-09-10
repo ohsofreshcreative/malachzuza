@@ -553,21 +553,3 @@ function get_pdf_thumbnail_url($pdf_attachment_id)
 	}
 }
 
-
-add_filter('woocommerce_package_rates', function ($rates, $package) {
-
-    $logger = wc_get_logger();
-
-    $logger->debug(
-        print_r($package, true),
-        ['source' => 'shipping-debug']
-    );
-
-    $logger->debug(
-        print_r($rates, true),
-        ['source' => 'shipping-debug']
-    );
-
-    return $rates;
-
-}, 100, 2);
