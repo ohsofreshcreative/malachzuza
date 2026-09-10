@@ -25,17 +25,17 @@
 				@endif
 			</div>
 
-			<div class="__content order2">
-				<p data-gsap-element="title" class="__title">{{ $g_content['title'] }}</p>
-				<h2 data-gsap-element="header" class="text-h4">{!! $g_content['header'] !!}</h2>
+			<div data-gsap-element="content" class="__content order2">
+				<p class="__title">{{ $g_content['title'] }}</p>
+				<h2 class="text-h4">{!! $g_content['header'] !!}</h2>
 
-				<div data-gsap-element="txt" class="m-header __txt">
+				<div class="m-header __txt">
 					{!! $g_content['text'] !!}
 				</div>
 
 
 				@if (!empty($g_content['hint']))
-				<div data-gsap-element="box" class="__hint flex items-center radius bg-primary-lighter border border-dashed border-primary p-6 gap-4 mt-6">
+				<div class="__hint flex items-center radius bg-primary-lighter border border-dashed border-primary p-6 gap-4 mt-6">
 					@if (!empty($g_content['image_hint']['url']))
 					<img
 						class="max-w-10 aspect-square"
@@ -64,8 +64,7 @@
 					<x-button
 						:href="$g_content['button1']['url']"
 						variant="primary"
-						class=""
-						data-gsap-element="btn">
+						class="">
 						{{ $g_content['button1']['title'] }}
 					</x-button>
 					@endif
@@ -74,8 +73,7 @@
 					<x-button
 						:href="$g_content['button2']['url']"
 						variant="secondary"
-						class=""
-						data-gsap-element="btn">
+						class="">
 						{{ $g_content['button2']['title'] }}
 					</x-button>
 					@endif
