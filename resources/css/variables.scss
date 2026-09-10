@@ -92,14 +92,14 @@ body {
 /*--- TEKSTURA STRONY ---*/
 
 body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  background: url('@images/bg-malach.jpg') center / cover no-repeat;
-  opacity: 0.25;
-  mix-blend-mode: soft-light;
-  pointer-events: none;
+	content: '';
+	position: fixed;
+	inset: 0;
+	z-index: 9998;
+	background: url('@images/bg-malach.jpg') center / cover no-repeat;
+	opacity: 0.25;
+	mix-blend-mode: soft-light;
+	pointer-events: none;
 }
 
 /*--- !ROOT ---*/
@@ -859,8 +859,8 @@ h6,
 .home #breadcrumbs {
 	display: none !important;
 }
-#breadcrumbs 
-.woocommerce-breadcrumb,
+
+#breadcrumbs .woocommerce-breadcrumb,
 #breadcrumbs {
 	text-align: left;
 	color: var(--color-secondary-200);
@@ -870,9 +870,9 @@ h6,
 	justify-content: start;
 	gap: 8px;
 
-	> span:nth-child(1) {
+	>span:nth-child(1) {
 		display: flex;
-		gap:8px;
+		gap: 8px;
 	}
 
 	a {
@@ -972,12 +972,12 @@ h6,
 	.wpcf7-form-control.wpcf7-radio {
 		display: flex;
 		flex-wrap: wrap;
-		gap:8px;
+		gap: 8px;
 	}
 
-	 .wpcf7-list-item {
+	.wpcf7-list-item {
 		margin-left: 0;
-	 }
+	}
 
 	.contact-form__radio {
 		display: flex;
@@ -1307,13 +1307,19 @@ article.post:hover {
 /*--- !SHOP ---*/
 
 .woocommerce {
-	margin-bottom:104px;
+	margin-bottom: 104px;
 }
 
 .wc_payment_method label {
 	img {
-		object-fit:cover;
+		object-fit: cover;
+		width: 40%;
 	}
+}
+
+.payment_box.payment_method_cashbill_basic_payment,
+.payment_box.payment_method_cashbill_blik_payment {
+	display: none;
 }
 
 /*--- !FOOTER ---*/
@@ -1426,7 +1432,7 @@ article.post:hover {
 	.footer_widget.open {
 
 		.menu {
-			margin-top:16px !important;
+			margin-top: 16px !important;
 		}
 	}
 
