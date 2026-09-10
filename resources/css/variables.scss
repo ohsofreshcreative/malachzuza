@@ -1310,6 +1310,12 @@ article.post:hover {
 	margin-bottom:104px;
 }
 
+.wc_payment_method label {
+	img {
+		object-fit:cover;
+	}
+}
+
 /*--- !FOOTER ---*/
 
 .footer-py {

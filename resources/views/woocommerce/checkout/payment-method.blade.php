@@ -17,7 +17,7 @@ if (! defined('ABSPATH')) {
 			data-order_button_text="{{ esc_attr($gateway->order_button_text) }}"
 		/>
 
-		<label for="payment_method_{{ esc_attr($gateway->id) }}" class="text-sm font-semibold text-white cursor-pointer">
+		<label for="payment_method_{{ esc_attr($gateway->id) }}" class="text-sm font-semibold text-white cursor-pointer flex">
 			{!! $gateway->get_title() !!} {!! $gateway->get_icon() !!}
 		</label>
 	</div>
