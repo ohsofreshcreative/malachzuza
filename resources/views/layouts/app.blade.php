@@ -40,16 +40,16 @@
 		@elseif (function_exists('is_woocommerce') && (is_product() || is_cart() || is_checkout() || is_account_page()))
 
 		<main id="main" class="c-main -menu-mt">
-			<a href="/" class="block mb-6">← Wróć do strony głównej</a>
+			<a href="/" class="block mb-6 w-max">← Wróć do strony głównej</a>
 			@yield('content')
 		</main>
 
 		@else
 
 		<main id="main" class="main -menu-mt">
-			<div class="c-main">
-				<a href="/">← Wróć do strony głównej</a>
-			</div>
+			@if (is_page([3, 12]))
+			<a href="/" class="block mb-6 w-max">← Wróć do strony głównej</a>
+			@endif
 			@yield('content')
 		</main>
 
