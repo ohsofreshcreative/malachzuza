@@ -48,7 +48,7 @@
 
 		<main id="main" class="main -menu-mt">
 			@if (is_page([3, 12]))
-			<a href="/" class="block mb-6 w-max">← Wróć do strony głównej</a>
+			<div class="c-main"><a href="/" class="block mb-6 w-max">← Wróć do strony głównej</a></div>
 			@endif
 			@yield('content')
 		</main>
