@@ -1,6 +1,6 @@
 @if (WC()->cart->is_empty())
     <!-- Stan: Pusty koszyk -->
-    <div class="flex-1 flex flex-col items-center justify-center p-8 text-center text-gray-500">
+    <div class="flex-1 flex flex-col items-center justify-center p-8 text-center text-primary-200">
         <img src="{{ get_template_directory_uri() }}/resources/images/cart.svg" class="w-16 h-16 opacity-30 mb-4 filter invert" alt="Pusty koszyk" />
         <p class="text-lg font-bold text-primary mb-2">Twój koszyk jest pusty</p>
         <p class="text-sm mb-6 max-w-[250px] mx-auto">Dodaj produkty do koszyka, aby kontynuować zakupy.</p>
@@ -24,7 +24,7 @@
                 $remove_url = wc_get_cart_remove_url($cart_item_key);
             @endphp
             <div class="flex gap-4 py-4 first:pt-2 last:pb-2 group relative items-center">
-                <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-white border border-gray-100 rounded-lg p-1 overflow-hidden">
+                <div class="shrink-0 w-16 h-16 flex items-center justify-center bg-background border border-primary/25 rounded-lg p-1 overflow-hidden">
                     @if ($permalink)
                         <a class="block w-full h-full" href="{{ $permalink }}">{!! $thumbnail !!}</a>
                     @else
@@ -34,15 +34,15 @@
                 
                 <div class="flex-1 min-w-0 pr-6">
                     @if ($permalink)
-                        <a href="{{ $permalink }}" class="font-bold text-sm text-primary hover:text-secondary transition-colors block truncate">
+                        <a href="{{ $permalink }}" class="font-bold text-sm text-primary hover:text-primary-200 transition-colors block truncate">
                             {{ $product_name }}
                         </a>
                     @else
                         <span class="font-bold text-sm text-primary block truncate">{{ $product_name }}</span>
                     @endif
-                    <div class="text-xs text-gray-500 mt-1 flex items-center gap-1.5">
+                    <div class="text-xs text-primary-200 mt-1 flex items-center gap-1.5">
                         <span>Ilość: <strong class="text-primary">{{ $cart_item['quantity'] }}</strong></span>
-                        <span class="text-gray-300">•</span>
+                        <span class="text-primary-200">•</span>
                         <span>{!! $product_price !!}</span>
                     </div>
                     <div class="mt-1 font-bold text-sm text-primary">
@@ -52,7 +52,7 @@
 
                 <div class="absolute right-0 top-1/2 -translate-y-1/2">
                     <a href="{{ $remove_url }}" 
-                       class="remove remove_from_cart_button text-gray-300 hover:text-red-500 transition-colors text-2xl font-light p-1" 
+                       class="remove remove_from_cart_button text-primary-200 hover:text-red-500 transition-colors text-2xl font-light p-1"
                        aria-label="Usuń produkt" 
                        data-product_id="{{ $product_id }}" 
                        data-cart_item_key="{{ $cart_item_key }}" 
@@ -63,14 +63,14 @@
     </div>
 
       <!-- Podsumowanie wartości i Przyciski dolne -->
-    <div class="border-t border-gray-100 p-6 bg-gray-50 space-y-4">
+    <div class="border-t border-primary/25 p-6 bg-primary-dark space-y-4">
         <div class="flex justify-between items-center text-sm font-medium">
-            <span class="text-gray-500 text-base">Wartość koszyka:</span>
+            <span class="text-primary-200 text-base">Wartość koszyka:</span>
             <span class="font-extrabold text-xl text-primary">{!! WC()->cart->get_cart_subtotal() !!}</span>
         </div>
         <div class="grid grid-cols-2 gap-4">
             <!-- Poprawiono ważność klasy (text-primary!) oraz tekst na 'Koszyk' -->
-            <a href="{{ wc_get_cart_url() }}" class="bg-white! border-2 border-gray-200 text-primary! hover:bg-gray-100 hover:border-gray-300 transition-colors text-center font-bold py-3 rounded-lg text-sm shadow-xs flex items-center justify-center w-full">
+            <a href="{{ wc_get_cart_url() }}" class="bg-background! border-2 border-primary/25 text-primary! hover:bg-primary-dark hover:border-primary transition-colors text-center font-bold py-3 rounded-lg text-sm shadow-xs flex items-center justify-center w-full">
                Koszyk
             </a>
             <a href="{{ wc_get_checkout_url() }}" class="btn btn-secondary text-center font-bold !py-3 !rounded-lg text-sm shadow-xs flex items-center justify-center w-full">

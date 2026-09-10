@@ -7,7 +7,7 @@ if (! wp_doing_ajax()) {
 @endphp
 
 {{-- Nadpisuje woocommerce/templates/checkout/payment.php - lekko wydzielone tłem od tabeli podsumowania powyżej. --}}
-<div id="payment" class="woocommerce-checkout-payment bg-slate-50! rounded-xl border-t border-slate-200 mt-5 p-5">
+<div id="payment" class="woocommerce-checkout-payment bg-primary-dark! rounded-xl border-t border-primary/25 mt-5 p-5">
 	@if (WC()->cart && WC()->cart->needs_payment())
 		<ul class="wc_payment_methods payment_methods methods" aria-label="{{ esc_attr__('Payment methods', 'woocommerce') }}">
 			@if (! empty($available_gateways))

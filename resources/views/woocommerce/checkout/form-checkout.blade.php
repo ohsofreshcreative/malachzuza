@@ -50,7 +50,7 @@
 
         @php do_action('woocommerce_checkout_before_order_review'); @endphp
 
-        <div id="order_review" class="woocommerce-checkout-review-order bg-white border border-slate-200 rounded-xl p-6">
+        <div id="order_review" class="woocommerce-checkout-review-order bg-background border border-primary/25 rounded-xl p-6">
           {{-- To wyświetla:
                - listę pozycji
                - metody wysyłki

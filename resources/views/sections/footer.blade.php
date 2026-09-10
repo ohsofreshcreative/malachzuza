@@ -1,4 +1,4 @@
-<footer class="footer overflow-hidden relative z-10 -smt">
+<footer class="footer overflow-hidden relative z-10">
 
 	<!-- <img class="absolute opacity-10 right-0 bottom-0" src="{{ get_template_directory_uri() }}/resources/images/lines-footer.svg" alt="Lines Footer" />
 

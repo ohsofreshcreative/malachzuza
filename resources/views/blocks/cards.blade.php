@@ -29,7 +29,7 @@
 			@foreach ($r_cards as $item)
 
 			<div data-gsap-element="card" class="h-full">
-				<div class="__card relative h-full bg-white b-shadow radius p-6">
+				<div class="__card relative h-full bg-background b-shadow border border-primary-100/30 radius p-6">
 					@if (!empty($item['image']['url']))
 					<img class="mb-4" src="{{ $item['image']['url'] }}" alt="{{ $item['image']['alt'] ?? '' }}" />
 					@else

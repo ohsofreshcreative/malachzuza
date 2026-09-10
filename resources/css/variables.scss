@@ -89,6 +89,19 @@ body {
 	font-size: 16px;
 }
 
+/*--- TEKSTURA STRONY ---*/
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: url('@images/bg-malach.jpg') center / cover no-repeat;
+  opacity: 0.25;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
 /*--- !ROOT ---*/
 
 :root {
@@ -405,7 +418,7 @@ body {
 }
 
 .section-dark {
-	background: var(--color-secondary);
+	background: #001027;
 	padding: var(--smt) 0;
 
 	h1,
@@ -1289,6 +1302,12 @@ article.post:hover {
 			padding: 0 !important;
 		}
 	}
+}
+
+/*--- !SHOP ---*/
+
+.woocommerce {
+	margin-bottom:104px;
 }
 
 /*--- !FOOTER ---*/

@@ -16,21 +16,21 @@
       data-counter-date="{{ $end_date }}"
       role="timer"
       aria-label="Czas pozostały do wskazanego terminu">
-      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100 bg-white p-6 text-center radius">
-        <span data-counter-days>{{ $counter_values['days'] }}</span>
-        <span>DNI</span>
+      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100/30 bg-background p-6 text-center radius">
+        <span data-counter-days class="text-5xl !font-bold">{{ $counter_values['days'] }}</span>
+        <span>dni</span>
       </div>
-      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100 bg-white p-6 text-center radius">
-        <span data-counter-hours>{{ str_pad((string) $counter_values['hours'], 2, '0', STR_PAD_LEFT) }}</span>
-        <span>GODZINY</span>
+      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100/30 bg-background p-6 text-center radius">
+        <span data-counter-hours class="text-5xl !font-bold">{{ str_pad((string) $counter_values['hours'], 2, '0', STR_PAD_LEFT) }}</span>
+        <span>godziny</span>
       </div>
-      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100 bg-white p-6 text-center radius">
-        <span data-counter-minutes>{{ str_pad((string) $counter_values['minutes'], 2, '0', STR_PAD_LEFT) }}</span>
-        <span>MINUTY</span>
+      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100/30 bg-background p-6 text-center radius">
+        <span data-counter-minutes class="text-5xl !font-bold">{{ str_pad((string) $counter_values['minutes'], 2, '0', STR_PAD_LEFT) }}</span>
+        <span>minuty</span>
       </div>
-      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100 bg-white p-6 text-center radius">
-        <span data-counter-seconds>{{ str_pad((string) $counter_values['seconds'], 2, '0', STR_PAD_LEFT) }}</span>
-        <span>SEKUNDY</span>
+      <div data-gsap-element="card" class="__card flex flex-col items-center gap-2 border border-primary-100/30 bg-background p-6 text-center radius">
+        <span data-counter-seconds class="text-5xl !font-bold">{{ str_pad((string) $counter_values['seconds'], 2, '0', STR_PAD_LEFT) }}</span>
+        <span>sekundy</span>
       </div>
     </div>
     @endif

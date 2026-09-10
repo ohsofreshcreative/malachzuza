@@ -5,7 +5,7 @@ if (! defined('ABSPATH')) {
 @endphp
 
 {{-- Nadpisuje woocommerce/templates/checkout/payment-method.php - jedna metoda płatności na liście. --}}
-<li class="wc_payment_method payment_method_{{ esc_attr($gateway->id) }} py-3 border-b border-slate-200 last:border-b-0 last:pb-0">
+<li class="wc_payment_method payment_method_{{ esc_attr($gateway->id) }} py-3 border-b border-primary/25 last:border-b-0 last:pb-0">
 	<div class="flex items-center gap-2">
 		<input
 			id="payment_method_{{ esc_attr($gateway->id) }}"
@@ -17,7 +17,7 @@ if (! defined('ABSPATH')) {
 			data-order_button_text="{{ esc_attr($gateway->order_button_text) }}"
 		/>
 
-		<label for="payment_method_{{ esc_attr($gateway->id) }}" class="text-sm font-semibold text-slate-900 cursor-pointer">
+		<label for="payment_method_{{ esc_attr($gateway->id) }}" class="text-sm font-semibold text-white cursor-pointer">
 			{!! $gateway->get_title() !!} {!! $gateway->get_icon() !!}
 		</label>
 	</div>

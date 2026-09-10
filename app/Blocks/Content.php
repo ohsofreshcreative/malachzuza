@@ -15,13 +15,13 @@ class Content extends Block
 	public $icon = 'align-pull-left';
 	public $keywords = ['tresc', 'zdjecie'];
 	public $mode = 'edit';
-public $supports = [
-    'align' => false,
-    'mode' => true,
-    'jsx' => true,
-    'anchor' => true,
-    'customClassName' => true,
-];
+	public $supports = [
+		'align' => false,
+		'mode' => true,
+		'jsx' => true,
+		'anchor' => true,
+		'customClassName' => true,
+	];
 
 	public function fields()
 	{
@@ -38,7 +38,12 @@ public $supports = [
 				'preview_size' => 'thumbnail',
 			])
 			->addText('title', ['label' => 'Tytuł'])
-			->addText('header', ['label' => 'Nagłówek'])
+			->addTextarea('header', [
+				'label' => 'Nagłówek',
+				'rows' => 2,
+				'placeholder' => 'Wpisz opis...',
+				'new_lines' => 'br',
+			])
 			->addWysiwyg('text', [
 				'label' => 'Treść',
 				'tabs' => 'all',

@@ -1,6 +1,8 @@
 .b-content {
 	.__txt {
-
+		a {
+			text-decoration: underline !important;
+		}
 		h1,
 		h2,
 		h3,
@@ -23,6 +25,17 @@
 		strong {
 			font-weight: 600;
 		}
+
+    ol {
+      list-style-type: decimal;
+      padding-left: 24px;
+      margin-top: 8px;
+      margin-bottom: 24px;
+
+      > li {
+        margin-bottom: 0.5em;
+      }
+    }
 
 		ul {
 			margin-top: 8px;

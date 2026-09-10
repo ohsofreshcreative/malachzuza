@@ -29,7 +29,7 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DErQclgP.css",
+    "file": "assets/app-Dd2UgW64.css",
     "name": "app",
     "names": [
       "app.css"
@@ -37,6 +37,7 @@
     "src": "resources/css/app.css",
     "isEntry": true,
     "assets": [
+      "assets/bg-malach-C1tNxdlI.jpg",
       "assets/btn-arrow-DTPiQfMM.svg",
       "assets/bottom-arrow-BIW1L8lC.svg",
       "assets/check-B9vqYQsp.svg",
@@ -47,7 +48,7 @@
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-Cq6tlhxs.css",
+    "file": "assets/editor-iYrbroEH.css",
     "name": "editor",
     "names": [
       "editor.css"
@@ -55,6 +56,7 @@
     "src": "resources/css/editor.css",
     "isEntry": true,
     "assets": [
+      "assets/bg-malach-C1tNxdlI.jpg",
       "assets/btn-arrow-DTPiQfMM.svg",
       "assets/bottom-arrow-BIW1L8lC.svg",
       "assets/check-B9vqYQsp.svg",
@@ -63,6 +65,10 @@
       "assets/phone-B5evyx38.svg",
       "assets/mail-BoVXRJiK.svg"
     ]
+  },
+  "resources/images/bg-malach.jpg": {
+    "file": "assets/bg-malach-C1tNxdlI.jpg",
+    "src": "resources/images/bg-malach.jpg"
   },
   "resources/images/bottom-arrow.svg": {
     "file": "assets/bottom-arrow-BIW1L8lC.svg",

@@ -18,7 +18,7 @@ $sectionClass .= ' ' . $background;
 		<h2 data-gsap-element="header" class="m-header">{{ $g_gallery['header'] }}</h2>
 
 		@if (!empty($g_gallery['gallery']))
-		<div data-gsap-element="images" class="lightbox-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+		<div data-gsap-element="images" class="lightbox-gallery grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
 			@foreach ($g_gallery['gallery'] as $image)
 		
             <a href="{{ $image['url'] }}">

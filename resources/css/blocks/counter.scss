@@ -1,2 +1,22 @@
 .b-counter {
+  .__card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -76px;
+      right: -56px;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      filter: blur(132px);
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: -1;
+    }
+  }
 }

@@ -22,6 +22,15 @@ class ThemeSettings extends Field
 				'allow_null' => 0,
 			])
 
+			->addTab('Overlay wideo', ['placement' => 'top'])
+			->addFile('site_overlay_video', [
+				'label' => 'Klip wideo',
+				'instructions' => 'Krótki klip MP4 lub WebM odtwarzany w pętli bez dźwięku na całej stronie. Efekt screen przy kryciu 20% najlepiej działa z jasną teksturą na czarnym tle. Usuń klip, aby wyłączyć overlay.',
+				'return_format' => 'array',
+				'mime_types' => 'mp4,webm',
+				'library' => 'all',
+			])
+
 			->addTab('Logo', ['placement' => 'top'])
 			->addImage('logo', [
 				'label' => 'Logo',

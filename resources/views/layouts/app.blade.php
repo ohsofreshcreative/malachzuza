@@ -63,6 +63,20 @@
 	@include('partials.cart-drawer')
 	@endif
 
+  @if (!empty($site_overlay_video['url']))
+    <video
+      class="fixed inset-0 z-[9999] w-full h-full object-cover pointer-events-none mix-blend-screen opacity-20 motion-reduce:hidden"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="none"
+      aria-hidden="true"
+      tabindex="-1">
+      <source src="{{ $site_overlay_video['url'] }}" type="{{ $site_overlay_video['mime_type'] ?? 'video/mp4' }}">
+    </video>
+  @endif
+
 	@php(do_action('get_footer'))
 	@php(wp_footer())
 

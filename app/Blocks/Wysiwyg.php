@@ -32,6 +32,11 @@ class Wysiwyg extends Block
 			/*--- GROUP ---*/
 			->addTab('Elementy', ['placement' => 'top'])
 			->addGroup('g_wysiwyg', ['label' => ''])
+			->addImage('image', [
+				'label' => 'Obraz tła',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+			])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addWysiwyg('txt', [
 				'label' => 'Treść',

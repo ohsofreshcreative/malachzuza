@@ -29,17 +29,17 @@ $just_added = defined('JUST_ADDED_TO_CART') || isset($_REQUEST['add-to-cart']);
 		x-transition:leave-start="translate-x-0"
 		x-transition:leave-end="translate-x-full"
 		@keydown.escape.window="open = false"
-		class="fixed top-0 right-0 bottom-0 w-full max-w-[440px] bg-white text-primary shadow-2xl z-[100] flex flex-col h-full overflow-hidden">
+		class="fixed top-0 right-0 bottom-0 w-full max-w-[440px] bg-background text-primary shadow-2xl z-[100] flex flex-col h-full overflow-hidden">
 
 		<!-- Header koszyka -->
-		<div class="flex items-center justify-between p-6 border-b border-gray-100">
+		<div class="flex items-center justify-between p-6 border-b border-primary/25">
 			<h6 class="text-xl font-extrabold text-primary flex items-center gap-2">
 				<span>Twój koszyk</span>
-				<span class="bg-secondary/15 text-secondary text-xs px-2.5 py-0.5 rounded-full cart-count-badge">
+				<span class="bg-primary/15 text-primary text-xs px-2.5 py-0.5 rounded-full cart-count-badge">
 					{{ WC()->cart->get_cart_contents_count() }}
 				</span>
 			</h6>
-			<button @click="open = false" class="p-2 -mr-2 text-gray-400 hover:text-primary transition-colors">
+			<button @click="open = false" class="p-2 -mr-2 text-primary-200 hover:text-primary transition-colors">
 				<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
 				</svg>

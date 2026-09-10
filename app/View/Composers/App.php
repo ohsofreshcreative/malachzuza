@@ -25,6 +25,7 @@ class App extends Composer
 			'logo' => get_field('logo', 'option'),
 			'logo_footer' => get_field('logo_footer', 'option'),
 			'footer_contact' => get_field('footer_contact', 'option'),
+			'site_overlay_video' => get_field('site_overlay_video', 'option'),
 		];
 	}
 
