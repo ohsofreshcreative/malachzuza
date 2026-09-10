@@ -59,6 +59,16 @@ add_action('template_redirect', function () {
 
 
 
+/*--- PRZEKIEROWANIE SKLEPU NA STRONĘ GŁÓWNĄ ---*/
+add_action('template_redirect', function () {
+	if (!function_exists('is_shop') || !is_shop() || is_front_page()) {
+		return;
+	}
+
+	wp_safe_redirect(home_url('/'), 302);
+	exit;
+});
+
 /*--- USUNIĘCIE ELEMENTÓW Z ARCHIWUM SKLEPU / KATEGORII ---*/
 add_action('wp', function () {
     if (!is_shop() && !is_product_category() && !is_product_tag()) {
