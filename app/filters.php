@@ -69,6 +69,22 @@ add_action('template_redirect', function () {
 	exit;
 });
 
+/*--- PRZEKIEROWANIE PRODUKTU "PREORDER" NA STRONĘ GŁÓWNĄ ---*/
+add_action('template_redirect', function () {
+	if (!is_product()) {
+		return;
+	}
+
+	$product = get_queried_object();
+
+	if (!$product || $product->post_name !== 'preorder') {
+		return;
+	}
+
+	wp_safe_redirect(home_url('/'), 302);
+	exit;
+});
+
 /*--- USUNIĘCIE ELEMENTÓW Z ARCHIWUM SKLEPU / KATEGORII ---*/
 add_action('wp', function () {
     if (!is_shop() && !is_product_category() && !is_product_tag()) {
