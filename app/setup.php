@@ -552,3 +552,18 @@ function get_pdf_thumbnail_url($pdf_attachment_id)
 		return wp_get_attachment_url($pdf_attachment_id);
 	}
 }
+
+
+add_filter('woocommerce_package_rates', function ($rates, $package) {
+
+    error_log('=== SHIPPING PACKAGE ===');
+
+    error_log(print_r($package, true));
+
+    error_log('=== SHIPPING RATES ===');
+
+    error_log(print_r($rates, true));
+
+    return $rates;
+
+}, 100, 2);
