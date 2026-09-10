@@ -1319,7 +1319,7 @@ article.post:hover {
 
 .payment_box.payment_method_cashbill_basic_payment,
 .payment_box.payment_method_cashbill_blik_payment {
-	display: none;
+	display: none !important;
 }
 
 /*--- !FOOTER ---*/
