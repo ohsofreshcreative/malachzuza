@@ -40,7 +40,7 @@ class Gallery extends Block
 				'preview_size' => 'medium',
 				'library' => 'all',
 				'min' => 1,
-				'max' => 10,
+				'max' => 20,
 			])
 
 			->endGroup()
